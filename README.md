@@ -8,9 +8,13 @@ This search filtered the dataset to only AWS Cloudtrail logs and displayed only 
 Once found i updated my search:
 index=botsv3 sourcetype=aws:cloudtrail userIdentity.type="IAMUser"
 From the result i examined the field userIdentity.userName which contained the IAM usernames. the usernames identified were:
+
   -splunk_access
+  
   -web_admin
+  
   -bstoll
+  
   -btun
 
 	
