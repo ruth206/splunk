@@ -100,6 +100,23 @@ CPU E5-2676
 **SCREENSHOT**
 
 
+**Identifying the event ID of the API call that enabled public access**
+
+To identify the event where an S3 bucket was made publicly accessible, i searched AWS cloudTrail logs using the following query:
+
+index=botsv3 sourcetype=aws:cloudtrail eventName=PutBucketAcl
+
+An S3 bucket's Access Control List (ACL) can be changed using the PutBucketAcl API function. Publicly accessible S3 buckets are frequently the result of improperly configured ACLs, which specify who is permitted to read or write to the bucket.
+
+Two events were found by this search. The ACL field was empty in both instances, which is noteworthy since a blank or altered ACL may suggest that permissions have been intentionally altered or eliminated, possibly allowing public access.
+
+I found the API call linked to this misconfiguration by looking at the event information. The event ID that made public access was:
+
+eventID: 9a33d8df-1e16-4d58-b36d-8e80ce68f8a3 
+
+**SCREENSHOT**
+
+
 
 
 	
