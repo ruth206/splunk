@@ -86,6 +86,22 @@ Once I saw inside the eventJSON, I knew the full path was:
 userIdentity.sessionContext.attributes.mfaAuthenticated
 
 **SCREENSHOT**
+
+**Identifying the processor number used on the web server**
+
+I identified the processor number used on the web server by searching for hardware-related logs using the following filter:
+
+index=botv3 sourcetype=hardware
+
+This search returned 3 results. All results contained the same hardware information from different hosts. The results showed identical CPU information indicating that the web servers are using the same processor model. The processor number is:
+
+CPU E5-2676
+
+**SCREENSHOT**
+
+
+
+
 	
 
 
