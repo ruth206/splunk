@@ -143,6 +143,15 @@ OPEN_BUCKET_PLEASE_FIX.txt
 
 **SCREENSHOT**
 
+By running index=botsv3 sourcetype=winhostmon | stats count by OS i was able to identify the os that appears fewer time 
+
+Microsoft Windows 10 Enterprise	30
+Microsoft Windows 10 Pro	174
+
+To determine which Windows operating system version appeared less frequently, I queried the winhostmon sourcetype and used stats count by OS. The results showed that Windows 10 Enterprise had significantly fewer events compared to Windows 10 Pro, making it the least frequent operating system.
+
+I then used the host field to identify the endpoint associated with this OS. The FQDN of the endpoint running the different Windows edition was BSTOLL-L.
+
 
 
 
