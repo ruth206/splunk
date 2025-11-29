@@ -128,6 +128,26 @@ bucketName: frothlywebcode
 
 **SCREENSHOT**
 
+7.
+To see what AWS of files were availible in the dataset i ran the following command:
+
+index=botsv3 sourcetype=aws:* | stats count by sourcetype
+
+This returned a list of AWS-related sourcetypes and confirmed that aws:s3:accesslogs was availible. I already knew the name of the S3 bucket from previously identifying it(frothlywebcode) i also knew that the file was a text file this led me to search the S3 access logs using:
+
+index=botsv3 sourcetype=aws:* txt frothlywebcode
+
+I then could identify a successful file upload event associated with the publicly accessible S3 bucket this was:
+
+OPEN_BUCKET_PLEASE_FIX.txt
+
+**SCREENSHOT**
+
+
+
+
+
+
 
 
 
