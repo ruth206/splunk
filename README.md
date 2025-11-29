@@ -116,6 +116,19 @@ eventID: 9a33d8df-1e16-4d58-b36d-8e80ce68f8a3
 
 **SCREENSHOT**
 
+The name of Buds username is:
+
+bstoll
+
+**SCREENSHOT**
+
+The name of the bucket that was made publicly accessible was:
+
+bucketName: frothlywebcode 
+
+**SCREENSHOT**
+
+
 
 
 
