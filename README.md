@@ -112,7 +112,7 @@ Two events were found by this search. The ACL field was empty in both instances,
 
 I found the API call linked to this misconfiguration by looking at the event information. The event ID that made public access was:
 
-eventID: 9a33d8df-1e16-4d58-b36d-8e80ce68f8a3 
+eventID: ab45689d-69cd-41e7-8705-5350402cf7ac
 
 **SCREENSHOT**
 
