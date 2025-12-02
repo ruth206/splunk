@@ -150,7 +150,7 @@ Microsoft Windows 10 Pro	174
 
 To determine which Windows operating system version appeared less frequently, I queried the winhostmon sourcetype and used stats count by OS. The results showed that Windows 10 Enterprise had significantly fewer events compared to Windows 10 Pro, making it the least frequent operating system.
 
-I then used the host field to identify the endpoint associated with this OS. The FQDN of the endpoint running the different Windows edition was BSTOLL-L.
+I then used the host field to identify the endpoint associated with this OS. The FQDN of the endpoint running the different Windows edition was BSTOLL-L.froth.ly
 
 
 
