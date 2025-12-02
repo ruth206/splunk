@@ -1,6 +1,17 @@
 # splunk
 BOTV3 Splunk analysis
 
+**Introduction**
+
+A security operations centre(SOC) serves a critical role in monitoring and evaluating security data throughout an organisations infrastructure. It is used to prevent, detect and respond to cyber threats in real time. SOC primarily uses security information and event management(SIEM) platforms in modern enterprise setups to collect and analyse mass amounts of log data from servers, cloud services, and endpoints. Splunk is the main SIEM tool in this inquiry to facilitate SOC-style analysis and research.
+
+In this report the Boss of SOC v3 (BOTSv3) dataset is used to simulate an actual enterprise setting and perform an analysis on it. BOTSv3 has multiple log sources, including cloud audit logs, host monitoring data, and system level information. This allows users to practice analysis and investigative techniques that are frequently used within a SOC. This report matches real world SOC operations by involving structured querying, field analysis, and evidence based conclusions.
+
+In order to demonstrate effective SOC analysis, this report aims to illustrate how to use Splunk to examine security-related behaviour and system aspects in the environment. The report focusses on analysing identity and access behaviour, system configurations, and infrastructure visibility in order to detect noteworthy patterns, discrepancies, and security-relevant findings.
+
+The scope of this project is limited to the data found in the BOTSv3 dataset and the log analysis performed with Splunk. There is no use of external tools or real-world systems. The dataset is presumed to be reliable for drawing conclusions and to accurately reflect the simulated environment.
+
+
 **LOADING THE BOTV3 DATA**
 **SCREENSHOT**
 
