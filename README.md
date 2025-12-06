@@ -14,6 +14,7 @@ The scope of this project is limited to the data found in the BOTSv3 dataset and
 
 **LOADING THE BOTV3 DATA**
 **SCREENSHOT**
+<img width="1384" height="967" alt="Screenshot From 2025-11-21 18-16-46" src="https://github.com/user-attachments/assets/36b7a3a4-47f3-4833-9724-a1d457c4e337" />
 
 **Finding the IAM (Identity & Access Management) users that accessed an AWS service in Frothly's AWS environment.**
 
