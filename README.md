@@ -13,7 +13,7 @@ The scope of this project is limited to the data found in the BOTSv3 dataset and
 
 
 **LOADING THE BOTV3 DATA**
-**SCREENSHOT**
+
 <img width="1384" height="967" alt="Screenshot From 2025-11-21 18-16-46" src="https://github.com/user-attachments/assets/36b7a3a4-47f3-4833-9724-a1d457c4e337" />
 
 
@@ -52,7 +52,7 @@ From the result i examined the field userIdentity.userName which contained the I
 
    -btun
 
-   **SCREENSHOT**
+  
 
 
    
@@ -70,15 +70,18 @@ index=botsv3 sourcetype=aws:cloudtrail "\*mfaAuthenticated*"
 
 This search returned events that contained the string mfaAuthenticated anywhere in the event.
 
-I looked at the events and expanded the JSON feilds of an event:
+I looked at the events displayed:
 
-**SCREENSHOT**
+<img width="1892" height="964" alt="Screenshot From 2025-11-25 11-13-40" src="https://github.com/user-attachments/assets/9f0baeba-551a-47d2-b8d9-f7ff6f73c112" />
 
-And inside the object i observed:
+I expanded the JSON feilds of an event and inside the object i observed:
 
-**SCREENSHOT**
 
-This verified that AWS CloudTrail explicity provides MFA staus in this field and that it uses a boolean value(Trude or False)
+<img width="793" height="370" alt="2025-12-06" src="https://github.com/user-attachments/assets/acb48ee3-02a6-4962-bc37-d4d77940df1e" />
+
+
+
+This verified that AWS CloudTrail explicity provides MFA staus in this field and that it uses a boolean value(True or False)
 
 I ran the following to make sure Splunk could properly extract and search this field:
 
@@ -90,7 +93,7 @@ This search filters events that contain the mfaAuthenticated field. Results are 
 
 The result showed:
 
-**SCREENSHOT**
+<img width="749" height="191" alt="2025-12-06 (1)" src="https://github.com/user-attachments/assets/f152d889-9409-4d84-a1f1-f6c52f802c99" />
 
 This confirmed that the field resolves properly in Splunk and that the API calls were done without MFA.
 
@@ -115,7 +118,8 @@ Once I saw inside the eventJSON, I knew the full path was:
 
 userIdentity.sessionContext.attributes.mfaAuthenticated
 
-**SCREENSHOT**
+<img width="652" height="131" alt="2025-12-06 (3)" src="https://github.com/user-attachments/assets/beb9f5ce-d9f7-4aba-a895-3299ce04b7cc" />
+
 
 **Identifying the processor number used on the web server**
 
@@ -127,7 +131,8 @@ This search returned 3 results. All results contained the same hardware informat
 
 CPU E5-2676
 
-**SCREENSHOT**
+<img width="1840" height="830" alt="Screenshot From 2025-11-29 12-10-16" src="https://github.com/user-attachments/assets/e0fc28e4-877b-4bfc-8351-82f05b8285cb" />
+
 
 
 **Identifying the event ID of the API call that enabled public access**
@@ -144,22 +149,26 @@ I found the API call linked to this misconfiguration by looking at the event inf
 
 eventID: ab45689d-69cd-41e7-8705-5350402cf7ac
 
-**SCREENSHOT**
+<img width="1514" height="702" alt="Screenshot From 2025-12-02 13-55-35" src="https://github.com/user-attachments/assets/cc646fd5-aff8-4454-b39f-cb9a12e94f9a" />
+
 
 The name of Buds username is:
 
 bstoll
 
-**SCREENSHOT**
+<img width="1508" height="439" alt="Screenshot From 2025-11-29 14-19-45" src="https://github.com/user-attachments/assets/dc3edfc2-07cf-407a-a998-c9cf59f96a11" />
+
+
 
 The name of the bucket that was made publicly accessible was:
 
 bucketName: frothlywebcode 
 
-**SCREENSHOT**
 
-7.
-To see what AWS of files were availible in the dataset i ran the following command:
+
+<img width="1012" height="815" alt="Screenshot From 2025-11-29 14-14-52" src="https://github.com/user-attachments/assets/1597deb7-86ee-4503-9b86-a97845b4c93c" />
+
+7.To see what AWS of files were availible in the dataset i ran the following command:
 
 index=botsv3 sourcetype=aws:* | stats count by sourcetype
 
@@ -171,18 +180,27 @@ I then could identify a successful file upload event associated with the publicl
 
 OPEN_BUCKET_PLEASE_FIX.txt
 
-**SCREENSHOT**
+
+<img width="1840" height="717" alt="Screenshot From 2025-11-29 14-49-19" src="https://github.com/user-attachments/assets/825a6e87-5967-4700-9bae-494915bba0b3" />
+
 
 By running index=botsv3 sourcetype=winhostmon | stats count by OS i was able to identify the os that appears fewer time 
 
 Microsoft Windows 10 Enterprise	30
 Microsoft Windows 10 Pro	174
 
+
+
+
+
 To determine which Windows operating system version appeared less frequently, I queried the winhostmon sourcetype and used stats count by OS. The results showed that Windows 10 Enterprise had significantly fewer events compared to Windows 10 Pro, making it the least frequent operating system.
+
+<img width="1850" height="405" alt="Screenshot From 2025-11-29 15-24-02" src="https://github.com/user-attachments/assets/5acad9fa-d383-4190-a64a-6f179b516e56" />
 
 I then used the host field to identify the endpoint associated with this OS. The FQDN of the endpoint running the different Windows edition was BSTOLL-L.froth.ly
 
 
+<img width="1846" height="631" alt="Screenshot From 2025-12-02 13-42-22" src="https://github.com/user-attachments/assets/2871341e-22fd-4a5a-92eb-0bbc1ac9d5e2" />
 
 
 
