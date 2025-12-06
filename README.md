@@ -16,6 +16,20 @@ The scope of this project is limited to the data found in the BOTSv3 dataset and
 **SCREENSHOT**
 <img width="1384" height="967" alt="Screenshot From 2025-11-21 18-16-46" src="https://github.com/user-attachments/assets/36b7a3a4-47f3-4833-9724-a1d457c4e337" />
 
+
+
+<img width="852" height="589" alt="Screenshot From 2025-11-21 18-17-37" src="https://github.com/user-attachments/assets/59c3ca68-cac3-4860-a5c3-e7becc2d564c" />
+
+
+
+<img width="1852" height="927" alt="Screenshot From 2025-11-21 18-33-11" src="https://github.com/user-attachments/assets/de16ee80-9215-4057-963f-777c9f9735af" />
+
+
+
+<img width="1892" height="964" alt="Screenshot From 2025-11-24 14-11-27" src="https://github.com/user-attachments/assets/691c2161-f7d2-4aa9-a3d9-af616029654d" />
+
+
+
 **Finding the IAM (Identity & Access Management) users that accessed an AWS service in Frothly's AWS environment.**
 
 I started by running the splunk search: 
@@ -39,6 +53,10 @@ From the result i examined the field userIdentity.userName which contained the I
    -btun
 
    **SCREENSHOT**
+
+
+   
+<img width="1892" height="964" alt="Screenshot From 2025-11-24 15-55-03" src="https://github.com/user-attachments/assets/6aa87918-c211-4aa2-a46c-f5319627cbb0" />
 
   **How i determined the field for API activity without MFA**
 
