@@ -49,7 +49,7 @@ Once downloading the dataset it was ingested into Splunk. I confirmed that the d
 
 **Finding the IAM (Identity & Access Management) users that accessed an AWS service in Frothly's AWS environment.**
 
-I started by running the splunk search: 
+To find the IAM users who accessed AWS services in frothlys AWS enviorement I started by running the splunk search: 
 
 index=botsv3 sourcetype=aws:cloudtrail | fields user* 
 
