@@ -27,19 +27,23 @@ The exercise results demonstrate their connection to SOC operations through the 
 
 **LOADING THE BOTV3 DATA**
 
-<img width="1384" height="967" alt="Screenshot From 2025-11-21 18-16-46" src="https://github.com/user-attachments/assets/36b7a3a4-47f3-4833-9724-a1d457c4e337" />
+Figure 1 shows that the BOTSv3 dataset was obtained through the official GitHub repository this was to make sure that a trusted and widely used SOC training dataset was used. BOTSv3 was used in this exercise to simulate a real world scenario for threat hunting and log analysis.
+
+<img width="522" height="363" alt="2025-12-07" src="https://github.com/user-attachments/assets/857dacd8-a8e3-471c-a324-7de29bac9f3e" />
+
+Figure 2 shows a screenshot demonstrating that the dataset was downloaded and in the correct path.
+
+<img width="489" height="331" alt="2025-12-07 (1)" src="https://github.com/user-attachments/assets/c33efb75-575c-4ee8-8f0d-c7104020ea2f" />
+
+Figure 3 shows that Splunk Enterprise was installed on my virtual machine running Ubuntu Linux to simulate a typical SOC infrastructure environment. The virtualized Linux environment for Splunk deployment matches SOC operational practices because SIEM platforms commonly run on dedicated servers or virtual machines to achieve stability and maintain system isolation. The system runs on Ubuntu Linux since it is lightweight and works well with a wide range of log ingestion and processing tasks. A screenshot of the terminal output showing Splunk-related files on the machine is proof of this installation. 
 
 
+<img width="792" height="395" alt="2025-12-07 (2)" src="https://github.com/user-attachments/assets/3289fee3-3886-431a-b283-f5306848e9d0" />
 
-<img width="852" height="589" alt="Screenshot From 2025-11-21 18-17-37" src="https://github.com/user-attachments/assets/59c3ca68-cac3-4860-a5c3-e7becc2d564c" />
-
-
-
-<img width="1852" height="927" alt="Screenshot From 2025-11-21 18-33-11" src="https://github.com/user-attachments/assets/de16ee80-9215-4057-963f-777c9f9735af" />
+Once downloading the dataset it was ingested into Splunk. I confirmed that the dataset files were present on the system. I then executed searches against the botsv3 index to confirm successful ingestion and searchability of events. This is shown in figure 4.
 
 
-
-<img width="1892" height="964" alt="Screenshot From 2025-11-24 14-11-27" src="https://github.com/user-attachments/assets/691c2161-f7d2-4aa9-a3d9-af616029654d" />
+<img width="773" height="380" alt="2025-12-07 (3)" src="https://github.com/user-attachments/assets/fbf0774e-917d-4e9d-8afc-60274a8b518b" />
 
 
 
