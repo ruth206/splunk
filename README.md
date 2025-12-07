@@ -12,6 +12,19 @@ In order to demonstrate effective SOC analysis, this report aims to illustrate h
 The scope of this project is limited to the data found in the BOTSv3 dataset and the log analysis performed with Splunk. There is no use of external tools or real-world systems. The dataset is presumed to be reliable for drawing conclusions and to accurately reflect the simulated environment.
 
 
+**SOC Tier Responsibilities and Incident Handling**
+
+The analysis that was carried out within this exercise mainly reflects the responsibilities of Tier 1 and Tier 2 SOC analysts.
+Tier 1 analysts serve as a SOC's first line of defence. They are the first responders to security alerts and any possible suspicious activity.
+Within the BOTSv3 exercise I performed tier 1 SOC detection by analysing AWS CloudTrail logs to identify IAM activity and to see whether AWS API calls were made without multi factor authentication which could indicate insecure authentication behaviour.
+
+Tier 2 analysts are in charge of carrying out a more thorough study of tier 1 findings when any questionable activity has been detected within tier 1.
+ Within the BOTSv3 exercise an AWS S3 bucket had been misconfigured and made publicly accessible. The investigation requirements were to identify the IAM user responsible, which bucket was impacted and what API action allowed public access. Further investigation was carried out to check if anything had happened to the data whilst the S3 bucket was public. Endpoints in the network were then checked finding one with a different version of windows than the others. These activities reflect Tier 2 investigation within a SOC and directly support incident response decision-making.
+ 
+The exercise results demonstrate their connection to SOC operations through the prevention and detection and response and recovery phases. With regards to prevention The absence of multi-factor authentication for AWS API activity and the exposure of a publicly accessible S3 bucket reveals security control weaknesses that should have existed for prevention purposes. Detection was carried through with the use of Splunk to inspect CloudTrail logs, S3 access logs, and host monitoring data. This made it possible to identify insecure behaviour and misconfigurations within the environment. The investigation results support the response phase by providing the information required for rectification and containment steps such as identifying the affected bucket, responsible IAM user, API action, and potential data involvement. Lastly the recovery phase is used in order to lessen the possibility of such incidents like this happening in the future. This would entail applying lessons learned from these findings, such as strengthening MFA enforcement, tightening S3 access controls  and enhancing monitoring rules.
+
+
+
 **LOADING THE BOTV3 DATA**
 
 <img width="1384" height="967" alt="Screenshot From 2025-11-21 18-16-46" src="https://github.com/user-attachments/assets/36b7a3a4-47f3-4833-9724-a1d457c4e337" />
