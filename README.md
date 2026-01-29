@@ -240,6 +240,7 @@ I used the host field to identify the endpoint associated with this OS. The FQDN
 A SOC can detect abnormal systems in their environment through endpoint identification of operating system version differences. The combination of security 
 configurations and patch levels between OS versions creates security risks for systems. The SOC can perform additional analysis determining necessary actions by identifying the specific endpoint. 
 
+
 **Conclusion**
 
 The implementation of stronger preventative controls through mandatory multi-factor authentication (MFA) for AWS API activity and strict S3 access policies  would enhance 
