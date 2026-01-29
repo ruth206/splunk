@@ -1,4 +1,4 @@
-<img width="1920" height="1128" alt="image" src="https://github.com/user-attachments/assets/c07b4807-3f01-4f3d-ba2a-1b1329ccaaff" /># splunk
+# splunk
 BOTV3 Splunk analysis
 
 **Introduction**
