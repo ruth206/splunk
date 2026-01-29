@@ -2,6 +2,7 @@
 BOTV3 Splunk analysis
 
 **Introduction**
+
 In enterprise environments, a Security Operations Centre (SOC) oversees, identifies, and reacts to security-related incidents. Collecting and assessing massive amounts of data from cloud platforms, endpoints, and infrastructure systems, modern SOCs rely on Security Information and Event Management (SIEM) platforms. In this paper, SOC-style analysis and investigative activities are carried out using Splunk, a popular SIEM system.(Palo Alto Networks) 
 
 The Boss of the SOC version 3 (BOTSv3) dataset, which replicates a realistic enterprise environment using a variety of log sources, such as Windows endpoint monitoring data, S3 access logs, host hardware telemetry, and AWS CloudTrail logs, is used . The dataset allows practical SOC methods, including field analysis, filtering, structured querying, and event correlation across many data sources. 
